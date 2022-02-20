@@ -1,15 +1,31 @@
-// import './App.css';
 import React from 'react';
-import Header from './pages/Header'
-import Aboutus from './pages/layout/Aboutus';
-import Service from './pages/layout/Service';
-import { Browser as Router, Routes ,useRoutes} from 'react-router-dom'
+import Main from './layout/Main';
+import Aboutus from './pages/Aboutus';
+import Service from './pages/Service';
+import './App.css'
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 function App() {
-  return useRoutes([
-    {path:"/",element:<Aboutus />}
-  ]
- 
-  );
+  return (
+    // <Main />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="about" element={<Aboutus />} />
+        <Route path="service" element={<Service />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
+
+
+// useRoutes([
+//   {path:"/",element:<Aboutus />}
+// ]
+
+// )
